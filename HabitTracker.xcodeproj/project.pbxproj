@@ -14,6 +14,7 @@
 		09D209992639E31000C7974C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D209982639E31000C7974C /* Activity.swift */; };
 		09D2099C2639E38D00C7974C /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2099B2639E38D00C7974C /* Activities.swift */; };
 		09D209A02639EA1E00C7974C /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2099F2639EA1E00C7974C /* AddActivityView.swift */; };
+		09D209A52639F40700C7974C /* ActivityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D209A42639F40700C7974C /* ActivityDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		09D209982639E31000C7974C /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		09D2099B2639E38D00C7974C /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
 		09D2099F2639EA1E00C7974C /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
+		09D209A42639F40700C7974C /* ActivityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				09D2099B2639E38D00C7974C /* Activities.swift */,
 				09D2098A2639E1EB00C7974C /* ContentView.swift */,
 				09D2099F2639EA1E00C7974C /* AddActivityView.swift */,
+				09D209A42639F40700C7974C /* ActivityDetailView.swift */,
 				09D2098C2639E1EE00C7974C /* Assets.xcassets */,
 				09D209912639E1EE00C7974C /* Info.plist */,
 				09D2098E2639E1EE00C7974C /* Preview Content */,
@@ -149,6 +152,7 @@
 			files = (
 				09D2099C2639E38D00C7974C /* Activities.swift in Sources */,
 				09D209992639E31000C7974C /* Activity.swift in Sources */,
+				09D209A52639F40700C7974C /* ActivityDetailView.swift in Sources */,
 				09D209A02639EA1E00C7974C /* AddActivityView.swift in Sources */,
 				09D2098B2639E1EB00C7974C /* ContentView.swift in Sources */,
 				09D209892639E1EB00C7974C /* HabitTrackerApp.swift in Sources */,

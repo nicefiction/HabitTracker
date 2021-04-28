@@ -8,5 +8,5 @@ struct Activity: Identifiable {
     var id: UUID = UUID()
     let name: String
     let description: String
-    let completionCount: Int = 0
+    var completionCount: Int = 0
 }

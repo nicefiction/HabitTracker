@@ -33,25 +33,6 @@ struct AddActivityView: View {
                     TextField("Description" , text : $description)
                 }
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                Section(header : Text("completion count")) {
-                    HStack {
-                        Spacer()
-                        Text("\(completionCount)")
-                            .font(.largeTitle)
-                        Spacer()
-                    }
-                    Button(action: {
-                        completionCount += 1
-                    }, label: {
-                        HStack {
-                            Spacer()
-                            Text("Completed")
-                            Spacer()
-                        }
-                    })
-                }
-                .textFieldStyle(RoundedBorderTextFieldStyle())
             }
             .navigationBarTitle(Text("Add a new activity"))
             .navigationBarItems(trailing: Button("Save") {

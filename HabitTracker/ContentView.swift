@@ -22,7 +22,9 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(activities.list) { (activity: Activity) in
-                    Text(activity.name)
+                    NavigationLink(destination : ActivityDetailView(activity: activity)) {
+                        Text(activity.name)
+                    }
                 }
                 .onDelete(perform : deleteItems)
             }
