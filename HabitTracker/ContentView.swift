@@ -1,21 +1,64 @@
-//
-//  ContentView.swift
-//  HabitTracker
-//
-//  Created by Olivier Van hamme on 28/04/2021.
-//
+// MARK: ContentView.swift
 
 import SwiftUI
 
+
+
 struct ContentView: View {
+    
+     // ////////////////////////
+    //  MARK: PROPERTY WRAPPERS
+    
+    @ObservedObject var activities: Activities = Activities()
+    
+    
+    
+     // //////////////////////////
+    //  MARK: COMPUTED PROPERTIES
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        NavigationView {
+            List {
+                ForEach(activities.list) { (activity: Activity) in
+                    Text(activity.name)
+                }
+                .onDelete(perform : deleteItems)
+            }
+            .navigationBarTitle(Text("Habit tracker"))
+            .navigationBarItems(trailing : Button(action: {
+                let newActivity = Activity(name : "some name" ,
+                                           description : "some description")
+                activities.list.append(newActivity)
+            } , label : {
+                Image(systemName : "plus.circle")
+                    .font(.largeTitle)
+            }))
+        }
+    }
+    
+    
+    
+     // //////////////
+    //  MARK: METHODS
+    
+    func deleteItems(from offsets: IndexSet) {
+        
+        activities.list.remove(atOffsets: offsets)
     }
 }
 
+
+
+
+
+ // ///////////////
+//  MARK: PREVIEWS
+
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        ContentView()
+        
+        ContentView().previewDevice("iPhone 12 Pro")
     }
 }
