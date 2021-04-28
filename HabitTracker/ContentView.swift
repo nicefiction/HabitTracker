@@ -34,7 +34,7 @@ struct ContentView: View {
                     .font(.largeTitle)
             }))
             .sheet(isPresented: $isShowingAddNewActivityView) {
-                AddActivityView(list : activities)
+                AddActivityView(activities : activities)
             }
         }
     }

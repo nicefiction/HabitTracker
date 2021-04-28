@@ -10,7 +10,7 @@ struct AddActivityView: View {
     //  MARK: PROPERTY WRAPPERS
     
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var list: Activities
+    @ObservedObject var activities: Activities
     @State private var name: String = ""
     @State private var description: String = ""
     @State private var completionCount: Int = 0
@@ -46,7 +46,7 @@ struct AddActivityView: View {
                     }, label: {
                         HStack {
                             Spacer()
-                            Text("Done")
+                            Text("Completed")
                             Spacer()
                         }
                     })
@@ -54,7 +54,10 @@ struct AddActivityView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             }
             .navigationBarTitle(Text("Add a new activity"))
-            .navigationBarItems(trailing: Button("Close") {
+            .navigationBarItems(trailing: Button("Save") {
+                let newActivity = Activity(name : name ,
+                                           description : description)
+                activities.list.append(newActivity)
                 presentationMode.wrappedValue.dismiss()
         })
         }
@@ -72,6 +75,6 @@ struct AddActivity_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        AddActivityView(list : Activities()).previewDevice("iPhone 12 Pro")
+        AddActivityView(activities : Activities()).previewDevice("iPhone 12 Pro")
     }
 }
