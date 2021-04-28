@@ -10,6 +10,7 @@ struct ContentView: View {
     //  MARK: PROPERTY WRAPPERS
     
     @ObservedObject var activities: Activities = Activities()
+    @State private var isShowingAddNewActivityView: Bool = false
     
     
     
@@ -27,13 +28,14 @@ struct ContentView: View {
             }
             .navigationBarTitle(Text("Habit tracker"))
             .navigationBarItems(trailing : Button(action: {
-                let newActivity = Activity(name : "some name" ,
-                                           description : "some description")
-                activities.list.append(newActivity)
+                isShowingAddNewActivityView.toggle()
             } , label : {
                 Image(systemName : "plus.circle")
                     .font(.largeTitle)
             }))
+            .sheet(isPresented: $isShowingAddNewActivityView) {
+                AddActivityView(list : activities)
+            }
         }
     }
     
