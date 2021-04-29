@@ -6,6 +6,7 @@ import SwiftUI
 
 struct ActivityDetailView: View {
     
+    
      // ////////////////////////
     //  MARK: PROPERTY WRAPPERS
     
@@ -31,7 +32,7 @@ struct ActivityDetailView: View {
                 }
                 Button(action : {
                     self.activity.completionCount += 1
-                }, label: {
+                } , label: {
                     HStack {
                         Spacer()
                         Text("Completed")
@@ -56,7 +57,8 @@ struct ActivityDetailView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        ActivityDetailView(activity: Activity(name : "some name" ,
-                                              description : "some description")).previewDevice("iPhone 12 Pro")
+        ActivityDetailView(activity: Activity(name : "Activity 1" ,
+                                              description: "Description 1"))
+            .previewDevice("iPhone 12 Pro")
     }
 }

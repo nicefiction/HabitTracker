@@ -22,8 +22,13 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(activities.list) { (activity: Activity) in
-                    NavigationLink(destination : ActivityDetailView(activity: activity)) {
-                        Text(activity.name)
+                    NavigationLink(destination : ActivityDetailView(activity : activity)) {
+                        VStack(alignment : .leading) {
+                            Text(activity.name)
+                                .font(.headline)
+                            Text("Completed : \(activity.completionCount)")
+                                .font(.subheadline)
+                        }
                     }
                 }
                 .onDelete(perform : deleteItems)
