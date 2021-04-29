@@ -10,7 +10,7 @@ struct ActivityDetailView: View {
      // ////////////////////////
     //  MARK: PROPERTY WRAPPERS
     
-    @State var activity: Activity
+    @State var activity: Activity // FIXME: Data does not get saved .
     
     
     
